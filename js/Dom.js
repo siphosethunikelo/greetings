@@ -16,27 +16,31 @@ couterElem.innerHTML = greetFuncInstance.getCounter();
 
 
 function nameButton(e) {
-    var textbox = document.querySelector(".text-box ").value;
-    console.log(`${textbox}`);
+    var UpperCase = document.querySelector(".text-box ").value;
     var checkedNameBtnElem = document.querySelector("input[name='myradio']:checked");
-    console.log(checkedNameBtnElem.value);
-
     if (checkedNameBtnElem) {
-        if (checkedNameBtnElem.value == "IsiXhosa") {
-            document.querySelector('#msg').innerHTML = greetFuncInstance.xhosaGreet(textbox);
-        } else if (checkedNameBtnElem.value == "English") {
-            document.querySelector('#msg').innerHTML = greetFuncInstance.englishGreet(textbox);
-        } else if (checkedNameBtnElem.value == "Afrikaans") {
-            document.querySelector('#msg').innerHTML = greetFuncInstance.afrikaansGreet(textbox);
-        }
+        var name = UpperCase.toUpperCase().charAt(0) + UpperCase.slice(1)
+
+    if (checkedNameBtnElem.value === "xhosa") {
+        document.querySelector('#msg').innerHTML = greetFuncInstance.xhosaGreet(name);
+    } else if (checkedNameBtnElem.value === "english") {
+        document.querySelector('#msg').innerHTML = greetFuncInstance.englishGreet(name);
+    } else if (checkedNameBtnElem.value === "afrikaans") {
+        document.querySelector('#msg').innerHTML = greetFuncInstance.afrikaansGreet(name);
     }
-    greetFuncInstance.setName(textbox);
+
+    greetFuncInstance.setName(name);
     localStorage.setItem('user', JSON.stringify(greetFuncInstance.getName()));
     couterElem.innerHTML = greetFuncInstance.getCounter()
     e.preventDefault();
+
+    } else {
+        document.querySelector('#msg').innerHTML = "please select language"
+    }
+
 };
 
-function resetButton(){
+function resetButton() {
     localStorage.removeItem('user');
     document.location.reload();
 }

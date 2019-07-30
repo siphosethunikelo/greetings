@@ -2,15 +2,20 @@ function greetFunc(nameList) {
     var greetedNames = nameList || {};
 
     function setName(val) {
+
+        if (val === "") {
+            return "err"
+        }
+
         var UpperCase = val.toLowerCase()
         var name = UpperCase.toUpperCase().charAt(0) + UpperCase.slice(1)
         if (greetedNames[name] === undefined) {
             greetedNames[name] = 0;
         }
-        else {
-        greetedNames[name]++;
-        }
 
+        else {
+            greetedNames[name]++
+        }
     }
 
 
@@ -20,15 +25,32 @@ function greetFunc(nameList) {
     }
 
     function englishGreet(name) {
-        return "Hello " + name
+        if (name) {
+            return "Hello " + name
+        }
+
+        else {
+            return "please selector your name"
+        }
     }
 
     function afrikaansGreet(name) {
-        return "Goeie moere " + name
+        if (name) {
+            return "Goeie moere " + name
+        }
+        else {
+            return "please selector your name"
+        }
     }
 
-    function xhosaGreet(names) {
-        return "Molo " + names
+    function xhosaGreet(name) {
+        if (name) {
+            return "Molo " + name
+        }
+        else {
+            return "please selector your name"
+
+        }
     }
 
     function getName() {
