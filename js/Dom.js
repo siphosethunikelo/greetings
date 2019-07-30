@@ -19,6 +19,7 @@ function nameButton(e) {
     var UpperCase = document.querySelector(".text-box ").value;
     var checkedNameBtnElem = document.querySelector("input[name='myradio']:checked");
     if (checkedNameBtnElem) {
+        UpperCase = UpperCase.toLowerCase();
         var name = UpperCase.toUpperCase().charAt(0) + UpperCase.slice(1)
 
     if (checkedNameBtnElem.value === "xhosa") {

@@ -2,16 +2,16 @@ describe("greet factory function", function () {
     it("should return the corrrect name greeted", function () {
         let greetInstance = greetFunc();
       
-        assert.equal('Hello Andile', greetInstance.EnglishGreet('Andile'));
+        assert.equal('Hello Andile', greetInstance.englishGreet('Andile'));
      })
          it("this should passed the correct name greeted",function(){
               let greetInstance = greetFunc();
              
-            assert.equal('Molo Sipho', greetInstance.IsixhosaGreet('Sipho')); 
+            assert.equal('Molo Sipho', greetInstance.xhosaGreet('Sipho')); 
     })
         it("this will return name greeted",function(){
              let greetInstance = greetFunc();
-             assert.equal('Goeie moere Sbu',greetInstance.AfrikaansGreet('Sbu'));
+             assert.equal('Goeie moere Sbu',greetInstance.afrikaansGreet('Sbu'));
         })
         it ("this will be able return all names greeted",function(){
                  let greetInstance = greetFunc();
